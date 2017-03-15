@@ -1,12 +1,40 @@
-//tekita element
-
-document.getElementById("nupp1").onclick  = function() { //nupp vajutusel juhtub see
 
 
-    var node = document.createElement("li"); // mis element tekitada
-    var text = document.getElementById("kast").value; //võtab väärtuse
-    var textnode=document.createTextNode(text); //muudab node textiks
-    node.appendChild(textnode); //annab nodile textnode väärtuse
-   // document.getElementById("nimekiri").appendChild(node);//lisab elemendi viimaseks
-     nimekiri.insertBefore(node, nimekiri.childNodes[0]);//lisab elemendi esimeseks
+//elemndi lisamine
+
+document.getElementById("nupp1").addEventListener("click", function() {
+	var value = document.getElementById("kast").value;
+	if (value) { 
+		lisauustegevus(value);
 }
+});
+
+function lisauustegevus(text) {
+
+	var list = document.getElementById('uld'); // kuhu lisab
+
+	//mida tekitab
+
+	var item = document.createElement("li");  //list itemi
+	item.innerText = text;
+
+	var nupud = document.createElement("div"); // div mis on li sees kuhu nupud lähevad
+	nupud.classList.add("buttons2");
+
+	var eemaldanupp = document.createElement("button"); // esiene nupp
+	eemaldanupp.classList.add("eemaldanupp");
+
+	var valmisnupp = document.createElement("button"); // teine nupp
+	valmisnupp.classList.add("valmisnupp");
+
+	//lisamise käsk
+
+	nupud.appendChild(eemaldanupp);
+	nupud.appendChild(valmisnupp);
+	item.appendChild(nupud);
+
+	//lisab esimeseks
+
+	list.insertBefore(item, list.childNodes[0]);
+	document.getElementById("kast").value = "";
+};
