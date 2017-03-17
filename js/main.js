@@ -9,9 +9,10 @@ document.getElementById("nupp1").addEventListener("click", function() {
 }
 });
 
+
 function lisauustegevus(text) {
 
-	var list = document.getElementById('uld'); // kuhu lisab
+	var list = document.getElementById('mnimekiri'); // kuhu lisab
 
 	//mida tekitab
 
@@ -37,4 +38,26 @@ function lisauustegevus(text) {
 
 	list.insertBefore(item, list.childNodes[0]);
 	document.getElementById("kast").value = "";
+
+	eemaldanupp.addEventListener("click", eemaldaasi);
+	valmisnupp.addEventListener("click", edasiasi);
 };
+
+//eemalda element,
+function  eemaldaasi(e) {
+	var zz = this.parentNode.parentNode;
+	 zz.parentNode.removeChild(zz);
+}
+function edasiasi(e) {
+
+var ss = this.parentNode.parentNode
+document.getElementById("vnimekiri").appendChild(ss);
+
+}
+//document.getElementById("uld").addEventListener("click", function() {
+	 //if ( event.target.className === 'eemaldanupp') {
+	  //var ss = this 
+	  //console.log(this)
+	 // ss.parentNode.removeChild(ss);
+	//};
+//});

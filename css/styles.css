@@ -10,19 +10,23 @@ body {
 }
 
 li {
-    overflow:hidden; 
-    white-space:no-wrap; 
-    text-overflow:ellipsis;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+	overflow: hidden;
 }
+
+li:hover {
+    overflow:visible; 
+    white-space: normal;
+    height: auto;
+
+  }
 
 #uld {
 	padding-top: 150px;
 }
 
-li:hover {
-text-overflow: inherit;
-overflow: visible;
-}
+
 
 header {
 	background-color: blue;
@@ -71,7 +75,7 @@ header #nupp1 {
 	
 }
 
-#nimekiri {
+#mnimekiri,#vnimekiri {
 
 	height: 50px;
 	width: 100%;
@@ -109,6 +113,7 @@ li {
     background-size: 100%;
     top: -37px;
     left: 50px;
+    z-index: 1;
     -webkit-appearance: none;
     -moz-appearance: none;
 
@@ -128,6 +133,10 @@ li {
     background:url(../images/check.png) no-repeat;
     background-size: 100%;
     left: 150px;
+    z-index: 1;
     -webkit-appearance: none;
     -moz-appearance: none;
+   }
+
+  
 
